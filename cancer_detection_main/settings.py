@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'cancer_detection_main.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-'''
+
 
 DATABASES = {
     'default': {
@@ -84,8 +84,8 @@ DATABASES = {
     }
 }
 
-'''
 
+''' 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -96,6 +96,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+'''
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -134,6 +135,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+     'cancer_detection_main/static'
+]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
